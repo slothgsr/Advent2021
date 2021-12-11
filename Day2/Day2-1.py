@@ -3,11 +3,6 @@ file = (r'C:\Users\SlothGSR\Desktop\python_stuff\MyPythonScripts\Advent2021\Day2
 with open(file) as f:
     lines = [line.rstrip('\n') for line in f]
 
-
-
-
-print(lines)
-
 forward = 0
 depth = 0
 
