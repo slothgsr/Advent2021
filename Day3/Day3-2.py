@@ -52,3 +52,4 @@ with open(file) as f:
     maxnum =(breakdown(lines, max)) 
 
     print(int(maxnum, 2) * int(minnum, 2))
+
