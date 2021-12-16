@@ -31,7 +31,6 @@ def breakdown(x,y):
                 newcode.append("0")
             else: 
                 newcode.append("1")
-        
         position += 1
     result =""
     for i in newcode:
@@ -50,6 +49,35 @@ with open(file) as f:
 
     minnum =(breakdown(lines, min))  
     maxnum =(breakdown(lines, max)) 
+    print("Gammarate * Epsilon rate = " + str(int(maxnum, 2) * int(minnum, 2)))
 
-    print(int(maxnum, 2) * int(minnum, 2))
+
+    codes = lines[:]
+    position = 0
+    while len(codes) > 1:
+        newcode =[]
+        digit = (breakdown(codes,min)[position])
+        for x in codes:
+            if x[position]== str(digit):
+                newcode.append(x)
+        position += 1
+        codes = newcode[:]
+
+    print(codes)
+    oxyrate = (int(codes[0],2))
+
+    codes = lines[:]
+    position = 0
+    while len(codes) > 1:
+        newcode =[]
+        digit = (breakdown(codes,max)[position])
+        for x in codes:
+            if x[position]== str(digit):
+                newcode.append(x)
+        position += 1
+        codes = newcode[:]
+    print(codes)
+    co2rate = (int(codes[0],2))
+
+    print(oxyrate * co2rate)
 
