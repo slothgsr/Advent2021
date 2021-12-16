@@ -60,10 +60,10 @@ with open(file) as f:
 
     minnum =(breakdown(lines, min))  
     maxnum =(breakdown(lines, max)) 
-    print("Gammarate * Epsilon rate = " + str(int(maxnum, 2) * int(minnum, 2)))
+    print("Gamma * Epsilon = " + str(int(maxnum, 2) * int(minnum, 2)))
 
 
     corate = rbreakdown(lines,min)
     oxyrate = rbreakdown(lines,max)
 
-    print(corate * oxyrate)
+    print("Co2 * Oxygen = " + str(corate * oxyrate))
