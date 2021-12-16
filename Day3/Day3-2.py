@@ -37,7 +37,18 @@ def breakdown(x,y):
         result += i
     return result
 
-
+def rbreakdown(lines,minmax):
+    codes = lines[:]
+    position = 0
+    while len(codes) > 1:
+        newcode =[]
+        digit = (breakdown(codes,minmax)[position])
+        for x in codes:
+            if x[position]== str(digit):
+                newcode.append(x)
+        position += 1
+        codes = newcode[:]
+    return(int(codes[0],2))
 
 abspath = os.path.abspath(sys.argv[0])
 dname = os.path.dirname(abspath)
@@ -52,32 +63,7 @@ with open(file) as f:
     print("Gammarate * Epsilon rate = " + str(int(maxnum, 2) * int(minnum, 2)))
 
 
-    codes = lines[:]
-    position = 0
-    while len(codes) > 1:
-        newcode =[]
-        digit = (breakdown(codes,min)[position])
-        for x in codes:
-            if x[position]== str(digit):
-                newcode.append(x)
-        position += 1
-        codes = newcode[:]
+    corate = rbreakdown(lines,min)
+    oxyrate = rbreakdown(lines,max)
 
-    print(codes)
-    oxyrate = (int(codes[0],2))
-
-    codes = lines[:]
-    position = 0
-    while len(codes) > 1:
-        newcode =[]
-        digit = (breakdown(codes,max)[position])
-        for x in codes:
-            if x[position]== str(digit):
-                newcode.append(x)
-        position += 1
-        codes = newcode[:]
-    print(codes)
-    co2rate = (int(codes[0],2))
-
-    print(oxyrate * co2rate)
-
+    print(corate * oxyrate)
