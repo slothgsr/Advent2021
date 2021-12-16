@@ -58,12 +58,12 @@ file = (r'Day3\input.txt')
 with open(file) as f:
     lines = [line.rstrip('\n') for line in f]
 
-    minnum =(breakdown(lines, min))  
-    maxnum =(breakdown(lines, max)) 
-    print("Gamma * Epsilon = " + str(int(maxnum, 2) * int(minnum, 2)))
+minnum =(breakdown(lines, min))  
+maxnum =(breakdown(lines, max)) 
+print("Gamma * Epsilon = " + str(int(maxnum, 2) * int(minnum, 2)))
 
 
-    corate = rbreakdown(lines,min)
-    oxyrate = rbreakdown(lines,max)
+corate = rbreakdown(lines,min)
+oxyrate = rbreakdown(lines,max)
 
-    print("Co2 * Oxygen = " + str(corate * oxyrate))
+print("Co2 * Oxygen = " + str(corate * oxyrate))

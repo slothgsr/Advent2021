@@ -48,7 +48,7 @@ file = (r'Day3\input.txt')
 with open(file) as f:
     lines = [line.rstrip('\n') for line in f]
 
-    minnum =(breakdown(lines, min))  
-    maxnum =(breakdown(lines, max)) 
+minnum =(breakdown(lines, min))  
+maxnum =(breakdown(lines, max)) 
 
-    print(int(maxnum, 2) * int(minnum, 2))
+print(int(maxnum, 2) * int(minnum, 2))
