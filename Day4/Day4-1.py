@@ -22,20 +22,21 @@ def makeboards(lines):
 
 with open(file) as f:
     lines = [line.rstrip('\n') for line in f]
-called_numbers = lines[0]
-print(lines)
+
+
+# create a list of strings of the called numbers
+called_numbers = lines[0].split(',')
+
+boards = makeboards(lines)
+print(boards)
 print(called_numbers)
-print(makeboards(lines))
-
-# cboards = (makeboards(lines))
-# for i in cboards:
-#     for x in i:
-#         print(x)
-#     print('')
 
 
 
+#for num in called_numbers:
 
+
+# for each called number.  find it in all boards and locate the row and column
 
 # create the boards as matrix/arry?? dictionary possibly?? Use class to label each one?? NumPy???
 # create hit boards to match each board 0 for nonhit and 1 for hit???  
